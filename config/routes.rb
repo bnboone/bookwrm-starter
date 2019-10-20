@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root to: 'books#index'
 
   devise_for :users
@@ -8,8 +9,9 @@ Rails.application.routes.draw do
   end
 
   resources :authors
-  
+
   resources :books do
     resources :reviews
+    resources :favorites
   end
 end
